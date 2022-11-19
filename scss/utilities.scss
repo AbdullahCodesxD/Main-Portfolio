@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+
+// COLORS
+$dark-color: #2d3142;
+$main-color: #c33c54;
+$sec-color: #fd5f7c;
+$light-color: #f4f4f4;
+$white: #fff;
+$text-color: #222;
+
+// FONTS
+$font-a: 'Roboto', sans-serif;
+$font-b: 'Saira Condensed', sans-serif;
+$font-c: 'Source Sans Pro', sans-serif;
+a {
+  font-family: $font-b;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-c;
+  text-transform: capitalize;
+}
+p {
+  font-family: $font-c;
+}
+
+// UTILITIES
+html {
+  // scroll-behavior: smooth;
+}
+body {
+  background-color: #f6faff;
+}
+.heading {
+  font-size: 2.5rem;
+  line-height: 1;
+  color: $text-color;
+  .highlight {
+    font-size: 2rem;
+    position: relative;
+    &:after {
+      transform: scale(1.125, 1.125) skew(-25deg);
+    }
+  }
+}
+.highlight {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: $light-color;
+  margin: 0px 0.5rem;
+  // z-index: 2;
+  &:after {
+    z-index: -1;
+    position: absolute;
+    content: '';
+    background-color: $main-color;
+    height: 100%;
+    width: 100%;
+    left: 0%;
+    top: 0;
+    transform: skew(-25deg) scale(1.125, 2);
+  }
+}
+
+.text-align {
+  text-align: center;
+}
+.container {
+  max-width: 1100px;
+  display: block;
+  margin: auto;
+}
+.my {
+  &-1 {
+    margin: 1rem;
+  }
+  &-2 {
+    margin: 2rem;
+  }
+}
+.mt {
+  &-1 {
+    margin: 1rem 0;
+  }
+  &-2 {
+    margin: 2rem 0;
+  }
+}
+.py {
+  &-1 {
+    padding: 1rem;
+  }
+  &-2 {
+    padding: 2rem;
+  }
+}
+
+// BTN
+%btn {
+  padding: 0.7rem 1.5rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 55rem;
+  border: none;
+  outline: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  a {
+    mix-blend-mode: lighten;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.btn {
+  &-dark {
+    color: $white;
+    background-image: linear-gradient(to left, $dark-color 99%, $main-color);
+    background-size: 50000%;
+    @extend %btn;
+    &:hover {
+      background-size: 100%;
+    }
+  }
+  &-main {
+    color: white;
+    background-image: linear-gradient(to left, $main-color 99%, $dark-color);
+    mix-blend-mode: invert;
+    background-size: 50000%;
+    @extend %btn;
+    &:hover {
+      background-size: 100%;
+      background-image: linear-gradient(to left, $main-color 99%, $dark-color);
+    }
+  }
+}
+.lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: $text-color;
+  opacity: 0.9;
+}
