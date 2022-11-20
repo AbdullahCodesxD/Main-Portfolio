@@ -187,7 +187,7 @@ main {
 #about {
   .container {
     display: flex;
-    height: 96vh;
+    min-height: 96vh;
     align-items: center;
     justify-content: center;
     .content {
@@ -212,7 +212,21 @@ main {
           }
         }
         p {
-          opacity: 0.9;
+          opacity: 0.8;
+
+          .highlight {
+            color: transparent;
+            margin: 0;
+            background-image: linear-gradient(
+              180deg,
+              $main-color 40%,
+              $dark-color
+            );
+            -webkit-background-clip: text;
+            &:after {
+              content: none;
+            }
+          }
           a {
             color: $main-color;
             position: relative;
@@ -374,6 +388,9 @@ main {
 
 // MEDIA
 @media (max-width: 390px) {
+  #about {
+    padding: 2.7rem 0rem 1rem 0rem;
+  }
   .special--heading {
     font-size: 1.7rem !important;
     .highlight {
@@ -398,7 +415,10 @@ main {
         width: 65vw;
         align-items: center;
         justify-content: space-between;
-
+        .logo--none {
+          opacity: 1;
+          cursor: pointer;
+        }
         .nav--links__container {
           flex-direction: row;
           position: relative;
