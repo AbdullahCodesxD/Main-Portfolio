@@ -127,14 +127,13 @@ body {
 main .container {
   padding: 3rem 0 0 1rem; }
   main .container nav {
-    position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
-    width: 100%;
-    height: 4rem; }
+    width: 100%; }
     main .container nav .logo {
-      position: relative;
+      position: absolute;
+      top: 0;
       left: 10px;
       height: 3.2rem;
       width: 3.2rem;
@@ -161,7 +160,11 @@ main .container {
       justify-content: center;
       border-radius: 0;
       transition: all 0.3s ease-in-out;
-      cursor: pointer; }
+      cursor: pointer;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 15; }
       main .container nav .hamburger .line {
         transition: all 0.3s ease-in-out;
         height: 0.125rem;
@@ -204,7 +207,11 @@ main .container {
       width: 55%;
       height: 100vh;
       left: 50%;
-      transition: all 0.3s ease-in-out; }
+      transition: all 0.3s ease-in-out;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 15; }
       main .container nav .nav--links__container .nav--links li {
         background-color: #2d3142;
         color: #c33c54;
@@ -254,7 +261,8 @@ main .container {
   display: flex;
   min-height: 96vh;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  max-width: 1100px; }
   #about .container .content {
     padding: 0px 1rem;
     display: flex;
@@ -295,7 +303,7 @@ main .container {
           bottom: 0;
           left: 0; }
     #about .container .content .text-align {
-      box-shadow: 7px 7px 20px #2d3142;
+      filter: drop-shadow(7px 7px 20px #4c4c4c);
       width: 10.4rem;
       margin-right: 1.2rem;
       height: 11rem;
@@ -408,44 +416,55 @@ main .container {
   .overlay--active {
     display: none; }
 
-  main .container nav {
-    display: flex;
-    width: 65vw;
-    align-items: center;
-    justify-content: space-between; }
-    main .container nav .logo--none {
-      opacity: 1;
-      cursor: pointer; }
-    main .container nav .nav--links__container {
-      flex-direction: row;
-      position: relative;
-      background-color: #fff !important;
-      width: fit-content;
-      height: fit-content;
-      padding: 1rem;
-      border-radius: 0 0 2rem 2rem;
-      left: 0% !important; }
-      main .container nav .nav--links__container .socials {
-        display: none !important; }
-      main .container nav .nav--links__container .nav--links {
-        display: flex; }
-        main .container nav .nav--links__container .nav--links li {
-          background-color: #fff !important; }
-    main .container nav .active {
-      left: 0% !important; }
+  main .container {
+    overflow: hidden; }
+    main .container nav {
+      position: fixed;
+      padding: 0rem 0 0 5rem;
+      display: flex;
+      width: 65vw;
+      align-items: center;
+      justify-content: space-between;
+      height: 4rem; }
+      main .container nav .logo {
+        position: relative; }
+      main .container nav .nav--links__container {
+        position: static;
+        flex-direction: row;
+        position: relative;
+        background-color: #fff !important;
+        width: fit-content;
+        height: fit-content;
+        padding: 1rem;
+        border-radius: 0 0 2rem 2rem;
+        left: 0% !important;
+        right: 0% !important; }
+        main .container nav .nav--links__container .socials {
+          display: none !important; }
+        main .container nav .nav--links__container .nav--links {
+          display: flex; }
+          main .container nav .nav--links__container .nav--links li {
+            background-color: #fff !important; }
+      main .container nav .active {
+        left: 0% !important; }
 
   #about .container .content {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 10rem; }
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    width: 1000px;
+    margin: auto; }
     #about .container .content .text .lead a:hover {
       color: #fd5f7c;
       text-decoration: none; }
       #about .container .content .text .lead a:hover:after {
         background: #fd5f7c; }
     #about .container .content .text-align {
-      width: 12.4rem;
-      height: 13rem; }
+      width: 208px;
+      box-shadow: none;
+      height: 13rem;
+      filter: drop-shadow(5px 20px 20px #4c4c4c); }
 
   #skills .container .skills__container {
     flex-direction: row; }
