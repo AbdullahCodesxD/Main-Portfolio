@@ -16,7 +16,6 @@ const navFunction = function () {
   navLinks.classList.toggle('active');
   hamBurger.classList.toggle('ham--active');
   overlay.classList.toggle('overlay--active');
-  logo.classList.toggle('logo--none');
 };
 // EVEMT LISTENER
 btn.addEventListener('click', function (e) {
