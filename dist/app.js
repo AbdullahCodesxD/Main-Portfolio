@@ -9,9 +9,26 @@ const proImages = document.querySelectorAll('.project--img');
 const logo = document.querySelector('.logo');
 const allSections = document.querySelectorAll('.section');
 const btn = document.querySelector('.btn');
+let lead = document.querySelector('.img__text');
 
 // FUNCTIONS
+let arr = [];
+let counter = 1;
+let no = 0;
+do {
+  if (no == 0) {
+    no++;
+  } else {
+    no--;
+  }
+  arr.push(no, no, no, no, no, no);
+  /*no = no === 0 ? no-- : no++;*/
 
+  counter++;
+} while (counter <= 1500);
+let str = arr.join('');
+lead.insertAdjacentHTML('afterbegin', str);
+console.log(str);
 const navFunction = function () {
   navLinks.classList.toggle('active');
   hamBurger.classList.toggle('ham--active');
