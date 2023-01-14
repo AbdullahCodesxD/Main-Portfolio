@@ -302,13 +302,39 @@ main .container {
           background-color: #c33c54;
           bottom: 0;
           left: 0; }
-    #about .container .content .text-align {
+    #about .container .content .img__text {
       filter: drop-shadow(7px 7px 20px #4c4c4c);
-      width: 10.4rem;
-      margin-right: 1.2rem;
-      height: 11rem;
-      border-radius: 50%; }
-
+      font-family: sans-serif;
+      background-image: url("./logo/img/me.jpeg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-clip: text;
+      -webkit-background-clip: text;
+      word-wrap: break-word;
+      line-height: 1;
+      height: 12rem;
+      border-radius: 0%;
+      letter-spacing: 0px;
+      width: 12rem;
+      display: block;
+      margin: auto;
+      text-align: right;
+      overflow: hidden;
+      user-select: none;
+      background-position-y: center;
+      animation: anim1 2s forwards ease-in-out; }
+@keyframes anim1 {
+  from {
+    color: #222;
+    line-height: 1;
+    border-radius: 0%;
+    letter-spacing: 0; }
+  to {
+    color: transparent;
+    line-height: 0.27;
+    letter-spacing: -5.7px;
+    border-radius: 50%; } }
 #projects {
   margin: 1rem 0;
   padding: 1rem 0; }
@@ -455,11 +481,13 @@ main .container {
     gap: 10rem;
     width: 1000px;
     margin: auto; }
-    #about .container .content .text .lead a:hover {
-      color: #fd5f7c;
-      text-decoration: none; }
-      #about .container .content .text .lead a:hover:after {
-        background: #fd5f7c; }
+    #about .container .content .text {
+      width: 70%; }
+      #about .container .content .text .lead a:hover {
+        color: #fd5f7c;
+        text-decoration: none; }
+        #about .container .content .text .lead a:hover:after {
+          background: #fd5f7c; }
     #about .container .content .text-align {
       width: 208px;
       box-shadow: none;
@@ -474,4 +502,3 @@ main .container {
     #contact .container .contact--container .contact img:hover {
       filter: invert(0); } }
 
-/*# sourceMappingURL=style.css.map */
